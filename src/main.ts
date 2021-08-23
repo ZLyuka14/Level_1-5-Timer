@@ -7,6 +7,16 @@ if (timerBox) {
   timerBox.style.fontSize = '40px';
 }
 
+/**
+ * This function helps with specifying styles for buttons.
+ * @param button link to button
+ * @param fontSize font size of the button
+ * @param padding padding of the button
+ * @param margin margin of the button
+ * @param background background of the button
+ * @param border border of the button
+ * @param cursor cursor style when hover
+ */
 function setButtonStyles(
   button: HTMLElement,
   fontSize: string,
@@ -25,6 +35,11 @@ function setButtonStyles(
   btn.style.cursor = cursor;
 }
 
+/**
+ * This function converts number of seconds in to proper time (minutes:seconds).
+ * @param seconds number of seconds
+ * @returns string that contains minutes and seconds
+ */
 function showProperTime(seconds: number): string {
   let min: string | number = seconds / 60;
 
@@ -46,6 +61,11 @@ function showProperTime(seconds: number): string {
   return time;
 }
 
+/**
+ * This function helps with toggling elements.
+ * It toggles display style from 'display: inline' to 'display: none' and backwards.
+ * @param elementsArray Array that contains HTML elements which need to be toggled.
+ */
 function toggleElements(elementsArray: HTMLElement[]) {
   const elements = elementsArray;
   elements.forEach((element) => {
@@ -54,6 +74,13 @@ function toggleElements(elementsArray: HTMLElement[]) {
   });
 }
 
+/**
+ * This function adds event listeners on buttons listed below.
+ * @param minus link to a minus button
+ * @param plus link to a plus button
+ * @param counterText text of the counter
+ * @param start link to a start button
+ */
 function addEvents(
   minus: HTMLElement,
   plus: HTMLElement,
@@ -105,6 +132,10 @@ function addEvents(
   });
 }
 
+/**
+ * This function creates a set of HTML elements forming a timer. Also applies styles.
+ * @param parent HTML element where to place timer
+ */
 function createTimer(parent: HTMLElement | null) {
   const timerTitle: HTMLElement = document.createElement('h2');
 
